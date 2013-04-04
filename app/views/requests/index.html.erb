@@ -3,6 +3,7 @@
 <table border ="1">
   <tr>
     <th>Job id</th>
+    <th>Approved</th>
     <th>Name</th>
     <th>Email</th>
     <th>Department</th>
@@ -21,6 +22,7 @@
 <% @requests.each do |request| %>
   <tr>
     <td><%= link_to request.id, request %></td>
+    <td><%= request.approved %> </td>
     <td><%= request.name %></td>
     <td><%= request.email %></td>
     <td><%= request.department %></td>

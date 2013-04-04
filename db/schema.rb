@@ -11,21 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130404190128) do
+ActiveRecord::Schema.define(:version => 20130404195823) do
 
-  create_table "requests", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "department"
-    t.date     "date"
-    t.string   "time"
-    t.integer  "budget"
-    t.integer  "quantity"
-    t.string   "priority"
-    t.string   "deliverable"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
+# Could not dump table "requests" because of following StandardError
+#   Unknown type 'test' for column 'comments'
 
 end
