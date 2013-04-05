@@ -1,6 +1,14 @@
 class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
+
+
+
+  #GET for search function
+def index
+  @projects = Project.search(params[:search])
+end
+
   def index
     @requests = Request.all
 
