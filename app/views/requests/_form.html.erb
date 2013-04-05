@@ -22,8 +22,8 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :department %><br />
-    <%= f.text_field :department %>
+    <%= f.label :department %><br />  
+    <%= f.select :department, [['IT'],['Marketing'],['Account Services'],['E-Commerce'],['General'],['Accounting'],['Retail'],['Visual'],['Merchandising'],['Production'],['Fabric and Trim'],['Tech Design'],['Print Design'],['Fashion Design'],['Print Design'],['Signature Stores'],['Specialtiy Stores'],['Major Stores'],['DC'],['Quality Control']] %>
   </div>
   <div class="field">
     <%= f.label :date %><br />
@@ -43,11 +43,11 @@
   </div>
   <div class="field">
     <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
+    <%= f.select :priority, [['Low'],['Medium'],['High'],['Urgent']] %>
   </div>
   <div class="field">
     <%= f.label :deliverable %><br />
-    <%= f.text_field :deliverable %>
+    <%= f.select :department, [['Print'],['Digital'],['Presentation'],['Booklet ']] %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
