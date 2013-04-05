@@ -1,0 +1,40 @@
+<table class = "pretty", border ="1">
+  <tr>
+    <th><%= sortable "id", "Job Id" %>     </th>
+    <th>Approved</th>
+    <th><%= sortable "name", "Name" %>       </th>
+    <th><%= sortable "email", "Email" %>      </th>
+    <th><%= sortable "department", "Department" %> </th>
+    <th><%= sortable "date", "Date"%>       </th>
+ <!-- 
+ <th>Time       </th>
+ <th>Budget     </th>
+<th>Quantity   </th> -->
+    <th><%= sortable "priority", "Priority" %>  </th>
+    <th><%= sortable "deliverable", "Deliverable" %> </th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @requests.each do |request| %>
+  <tr>
+    <td><%= link_to request.id, request %></td>
+    <td><%= request.approved %> </td>
+    <td><%= request.name %></td>
+    <td><%= request.email %></td>
+    <td><%= request.department %></td>
+    <td><%= request.date %></td>
+<!--     <td><%= request.time %></td>
+  <td><%= request.budget %></td>
+    <td><%= request.quantity %></td> -->
+    <td><%= request.priority %></td>
+    <td><%= request.deliverable %></td>
+    <td><%= request.description %></td>
+    <td><%= link_to 'Show', request %></td>
+    <td><%= link_to 'Edit', edit_request_path(request) %></td>
+    <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

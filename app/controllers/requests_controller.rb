@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
   def index
 
 
-    @requests = Request.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 2, :page => params[:page])
+    @requests = Request.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
     # respond_to do |format|
     #   format.html # index.html.erb
     #   format.json { render json: @requests }
