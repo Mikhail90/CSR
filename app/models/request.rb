@@ -7,7 +7,7 @@ class Request < ActiveRecord::Base
   else
     find(:all)
   end
-end
+	end
 
 
 end

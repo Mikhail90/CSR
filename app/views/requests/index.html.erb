@@ -1,27 +1,29 @@
 <h1>Listing requests</h1>
-
-
-<% form_tag requests_path, :method => 'get' do %>
+ 
+<!-- This is the search box. It does not work yet 10:30 April 5 -->
+<!--
+<%= form_tag requests_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
+ -->
 
-
-<table border ="1">
+<table class = "pretty", border ="1">
   <tr>
-    <th>Job id</th>
+    <th><%= sortable "id", "Job Id" %>     </th>
     <th>Approved</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Department</th>
-    <th>Date</th>
-<!--     <th>Time</th>
-   <th>Budget</th>
-    <th>Quantity</th> -->
-    <th>Priority</th>
-    <th>Deliverable</th>
+    <th><%= sortable "name", "Name" %>       </th>
+    <th><%= sortable "email", "Email" %>      </th>
+    <th><%= sortable "department", "Department" %> </th>
+    <th><%= sortable "date", "Date"%>       </th>
+ <!-- 
+ <th>Time       </th>
+ <th>Budget     </th>
+<th>Quantity   </th> -->
+    <th><%= sortable "priority", "Priority" %>  </th>
+    <th><%= sortable "deliverable", "Deliverable" %> </th>
     <th>Description</th>
     <th></th>
     <th></th>

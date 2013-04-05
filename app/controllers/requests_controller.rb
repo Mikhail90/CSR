@@ -1,21 +1,21 @@
 class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
+  helper_method :sort_column, :sort_direction
 
 
 
   #GET for search function
-def index
-  @projects = Project.search(params[:search])
-end
+
 
   def index
-    @requests = Request.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @requests }
-    end
+
+    @requests = Request.order(sort_column + " " + sort_direction)
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.json { render json: @requests }
+    # end
   end
 
   # GET /requests/1
@@ -88,4 +88,17 @@ end
       format.json { head :no_content }
     end
   end
+
+ private
+  
+  def sort_column
+    Request.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+
+
 end
