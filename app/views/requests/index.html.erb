@@ -1,14 +1,21 @@
 <h1>Listing requests</h1>
  
-<!-- This is the search box. It does not work yet 10:30 April 5 -->
-<!--
+
+
+<!-- These are the hidden field tags and they are for maintaining persistance accross seraches and sorts-->
+
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+
+<!-- This is the search box -->
 <%= form_tag requests_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
- -->
+ 
 
 <table class = "pretty", border ="1">
   <tr>
@@ -50,7 +57,7 @@
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate @requests %>
 <br />
 
 <%= link_to 'New Request', new_request_path %>

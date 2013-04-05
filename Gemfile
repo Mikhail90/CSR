@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
-gem 'will_paginate', '3.0.pre2'
+gem 'will_paginate', '3.0.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
+
 
 end
 
@@ -26,6 +26,7 @@ end
 
 group :development do
   gem 'annotate', '2.5.0'
+
 end
 
 group :production do
