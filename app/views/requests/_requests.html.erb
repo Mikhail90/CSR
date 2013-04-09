@@ -2,6 +2,7 @@
   <tr class = >
     <th><%= sortable "id", "Job Id" %>     </th>
     <th><%= sortable "approved","Accepted"%></th>
+    <th><%= sortable "status","Status"%></th>
     <th><%= sortable "name", "Name" %>       </th>
     <th><%= sortable "email", "Email" %>      </th>
     <th><%= sortable "department", "Department" %> </th>
@@ -22,6 +23,7 @@
   <tr>
     <td><%= link_to request.id, request %></td>
     <td><%= request.approved %> </td>
+    <td><%= request.status %> </td>
     <td><%= request.name %></td>
     <td><%= request.email %></td>
     <td><%= request.department %></td>

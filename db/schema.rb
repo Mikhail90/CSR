@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130404195823) do
+ActiveRecord::Schema.define(:version => 20130409155211) do
 
 # Could not dump table "requests" because of following StandardError
 #   Unknown type 'test' for column 'comments'
