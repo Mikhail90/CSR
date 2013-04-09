@@ -1,7 +1,10 @@
 <%= form_for(@request) do |f| %>
   <% if @request.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+   <!--    <p><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</p>
+ -->
+   <p><%= pluralize(@request.errors.count, "error:") %> Please allow for a minimum 1 week lead time. For urgent requests please email <a href = "kcunningham@lillypulitzer.com">Kathleen Cunningham</a> directly</p>
+
 
       <ul>
       <% @request.errors.full_messages.each do |msg| %>
@@ -24,7 +27,7 @@
     <%= f.select :department, [['IT'],['Marketing'],['Account Services'],['E-Commerce'],['General'],['Accounting'],['Retail'],['Visual'],['Merchandising'],['Production'],['Fabric and Trim'],['Tech Design'],['Print Design'],['Fashion Design'],['Print Design'],['Signature Stores'],['Specialtiy Stores'],['Major Stores'],['DC'],['Quality Control']] %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label "Date due:" %><br />
     <%= f.date_select :date,:default => 14.days.from_now %>
   </div>
  <!--  <div class="field">
