@@ -3,7 +3,7 @@
   <%= @request.id %>
 </p>
 <p>
-  <b>Approved:</b>
+  <b>Accepted:</b>
   <%= @request.approved %>
 </p>
 
@@ -21,16 +21,16 @@
   <b>Department:</b>
   <%= @request.department %>
 </p>
-
 <p>
-  <b>Date:</b>
-  <%= @request.date %>
+  <b> Date Submitted:</b>
+  <%= @request.created_at.strftime("%B %d, %Y") %>
 </p>
 
 <p>
-  <b>Time:</b>
-  <%= @request.time %>
+  <b> Request Date:</b>
+  <%= @request.date.strftime("%B %d, %Y") %>
 </p>
+
 
 <p>
   <b>Budget:</b>

@@ -1,7 +1,7 @@
 <table class = "pretty">
   <tr class = >
     <th><%= sortable "id", "Job Id" %>     </th>
-    <th>Approved</th>
+    <th><%= sortable "approved","Accepted"%></th>
     <th><%= sortable "name", "Name" %>       </th>
     <th><%= sortable "email", "Email" %>      </th>
     <th><%= sortable "department", "Department" %> </th>
@@ -25,7 +25,7 @@
     <td><%= request.name %></td>
     <td><%= request.email %></td>
     <td><%= request.department %></td>
-    <td><%= request.date %></td>
+    <td><%= request.date.strftime("%B %d, %Y") %></td>
 <!--     <td><%= request.time %></td>
   <td><%= request.budget %></td>
     <td><%= request.quantity %></td> -->
