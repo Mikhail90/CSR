@@ -3,6 +3,7 @@ class RequestsController < ApplicationController
   # GET /requests.json
   helper_method :sort_column, :sort_direction
 
+before_filter :authorize, only: [:edit, :update, :destroy]
 
 
   #GET for search function

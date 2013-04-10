@@ -16,4 +16,11 @@ ActiveRecord::Schema.define(:version => 20130409155211) do
 # Could not dump table "requests" because of following StandardError
 #   Unknown type 'test' for column 'comments'
 
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
 end
