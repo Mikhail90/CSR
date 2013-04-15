@@ -1,5 +1,6 @@
 <h1>Listing requests</h1>
  
+<p id="notice"><%= notice %></p>
 
 
 <!-- These are the hidden field tags and they are for maintaining persistance accross seraches and sorts-->
@@ -10,15 +11,15 @@
 
 <!-- This is the search box -->
 <%= form_tag requests_path, :method => 'get' do %>
-  <p>
+  <p >
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
  
-<!-- Moved the table to a partial to make it easier to manage -->
-<div id="requests"><%= render 'requests' %></div>
-
+<!-- Moved the table to a partial to make it easier to manage 
+  -->
+<div id="requests"><%= render 'blog' %></div>
 
 <%= will_paginate @requests %>
 <br />

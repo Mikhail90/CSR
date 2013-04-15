@@ -1,0 +1,47 @@
+
+<div class = "sort">
+	Sort By:
+	    <%= sortable "date", "Date" %>,
+
+    <%= sortable "status", "Status" %>, 
+    <%= sortable "priority", "Priority" %>,
+    <%= sortable "deliverable", "Deliverable" %>
+</div>
+
+<hr>
+
+<% @requests.each do |request| %>
+	
+
+
+
+<div class = "group">
+    <!-- Gorup is a row -->
+
+        <div class = "col span_6_of_12">
+
+		<div class = "due_date"><%= request.date.strftime("%B %d, %Y") %></div>
+
+		<div class = "title"><%= link_to request.title,edit_request_path(request) %></div>
+        <div class = "name" ><%= mail_to request.email, request.name %>, <span class = "dept"><%= request.department%></span> </div> 
+
+
+        </div>
+
+        <div class = "col span_6_of_12">
+
+			<div class = "priority">Priority: <%= request.priority %>, <span class = "status"> Status: <%= request.status%></span> </div>
+
+			<div class = "deliverable"><%= request.deliverable %></div>
+
+			<div class = "actions"> <td><%= link_to 'Show', request %></td> |
+    <td><%= link_to 'Edit', edit_request_path(request) %></td> |
+    <td><%= link_to 'Delete', request, method: :delete, data: { confirm: 'Are you sure?' } %></td> </div>
+
+		</div>
+	
+	</div>
+
+	<hr>
+
+    <% end %>

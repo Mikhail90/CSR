@@ -32,6 +32,8 @@ select,
 textarea {
   color: #333;
 }
+
+
 /** 
  * Gotham font faces
  * We should use 2-3 different styles tops for performance purposes
@@ -101,6 +103,8 @@ label {
 textarea, input {
   border: solid 1px #ddd;
   padding: 2px;
+  max-width: 300px;
+  width: 100%;
 }
 textarea:focus, input:focus {
   outline: none;
@@ -176,6 +180,39 @@ textarea {
 ul {
 list-style-type: none;
 }
+
+/* ==========================================================================
+   Mikhail's Changes
+   ========================================================================== */
+  .due_date{
+    font-weight: bold;
+  }
+
+  .title a{
+    color: #e01282;
+    
+    font-size: large;
+  }
+
+  .deliverable {
+ font-weight: bold;
+ font-size: medium;
+
+} 
+
+.search, input {
+ max-width: 150px; 
+ width: 75%;
+}
+
+.textarea_box{
+    padding: 2px;
+  max-width: 300px;
+  width: 100%;
+}
+
+
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
@@ -211,6 +248,7 @@ list-style-type: none;
   zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
 
+
 /*  GRID COLUMN SETUP   ==================================================================== */
 .col {
   display: block;
@@ -238,7 +276,7 @@ list-style-type: none;
 .span_7_of_12 {
   width: 57.62%; 
 }
-.span_6_of_12 {
+  .span_6_of_12 {
   width: 49.16%; 
 }
 .span_5_of_12 {
@@ -502,3 +540,4 @@ list-style-type: none;
         page-break-after: avoid;
     }
 }
+

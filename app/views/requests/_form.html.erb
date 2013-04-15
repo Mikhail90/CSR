@@ -18,6 +18,10 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+   <div class="field">
+    <%= f.label "Request Title" %><br />
+    <%= f.text_field :title %>
+  </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
@@ -50,7 +54,7 @@
     <%= f.label :deliverable %><br />
     <%= f.select :deliverable, [['Print'],['Digital'],['Presentation'],['Booklet ']] %>
   </div>
-  <div class="field">
+  <div class="textarea_box">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>

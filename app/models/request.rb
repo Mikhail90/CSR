@@ -1,5 +1,5 @@
 class Request < ActiveRecord::Base
-  attr_accessible :budget, :date, :deliverable, :department, :description, :email, :name, :priority, :quantity, :time, :approved, :comments, :status
+  attr_accessible :title,:budget, :date, :deliverable, :department, :description, :email, :name, :priority, :quantity, :time, :approved, :comments, :status
 
   validate :date_is_less_than_one_week_from_today
 

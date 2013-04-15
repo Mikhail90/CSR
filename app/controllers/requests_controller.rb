@@ -11,7 +11,8 @@ before_filter :authorize, only: [:edit, :update, :destroy]
 
   def index
 
-
+#15/4/13
+#Changing the soratable fucntion to a filter this will need to be edited 
     @requests = Request.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
     # respond_to do |format|
     #   format.html # index.html.erb
@@ -69,7 +70,7 @@ before_filter :authorize, only: [:edit, :update, :destroy]
 
     respond_to do |format|
       if @request.update_attributes(params[:request])
-        format.html { redirect_to @request, notice: 'Request was successfully updated.' }
+        format.html { redirect_to :root, notice: 'Request was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
