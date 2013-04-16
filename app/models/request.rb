@@ -13,7 +13,7 @@ class Request < ActiveRecord::Base
 
 def self.search(search)
   if search
-    where('LOWER(name) LIKE ? OR LOWER(title) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%")
+    where('LOWER(name) LIKE ? OR LOWER(title) LIKE ? OR jobnumber LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%","%#{search}%")
 
   else
     scoped
