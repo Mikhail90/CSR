@@ -1,12 +1,12 @@
-<%= form_for(@request) do |f| %>
+  <%= form_for(@request) do |f| %>
   <% if @request.errors.any? %>
     <div id="error_explanation">
    <!--    <p><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</p>
  -->
-   <p><%= pluralize(@request.errors.count, "error:") %> Please allow for a minimum 1 week lead time. For urgent requests please email <a href = "kcunningham@lillypulitzer.com">Kathleen Cunningham</a> directly</p>
+   <p class = "error"><%= pluralize(@request.errors.count, "error:") %> Please allow for a minimum 1 week lead time. For urgent requests please email <a href = "mailto:kcunningham@lillypulitzer.com?Subject=CSR">Kathleen Cunningham</a> directly</p>
 
 
-      <ul>
+      <ul class ="error">
       <% @request.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
@@ -52,7 +52,7 @@
   </div>
   <div class="field">
     <%= f.label :deliverable %><br />
-    <%= f.select :deliverable, [['Print'],['Digital'],['Presentation'],['Booklet ']] %>
+    <%= f.select :deliverable, [['Print'],['Digital'],['Presentation'],['Booklet'],['Multi-Media( Print, Digital, etc)'],['Other']] %>
   </div>
   <div class="textarea_box">
     <%= f.label :description %><br />

@@ -1,5 +1,5 @@
 class Request < ActiveRecord::Base
-  attr_accessible :title,:budget, :date, :deliverable, :department, :description, :email, :name, :priority, :quantity, :time, :approved, :comments, :status
+  attr_accessible :title, :budget, :date, :deliverable, :department, :description, :email, :name, :priority, :quantity, :time, :approved, :comments, :status, :jobnumber
 
   validate :date_is_less_than_one_week_from_today
 
@@ -13,7 +13,8 @@ class Request < ActiveRecord::Base
 
 def self.search(search)
   if search
-    where('name LIKE ?', "%#{search}%")
+    where('LOWER(name) LIKE ? OR LOWER(title) LIKE ? OR LOWER(jobnumber) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%")
+
   else
     scoped
   end

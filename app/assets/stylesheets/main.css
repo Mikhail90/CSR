@@ -210,7 +210,18 @@ list-style-type: none;
   max-width: 300px;
   width: 100%;
 }
+.error{
+  font-size: large;
+  color: red;
+  font-weight: bold;
+}
 
+.jobnumnber{
+  font-size: large;
+    font-weight: bold;
+
+
+}
 
 
 /* ==========================================================================
@@ -320,10 +331,17 @@ list-style-type: none;
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
+  z-index: 99;
+  top: 1%;
+  left:11%;
 }
 .logo img {
   margin: 17px 0 0 17px;
 }
+.logo a {
+  border-bottom: solid 0px #fff;
+}
+
 .shell {
   padding: 20px 0 40px 0;
   z-index: 2;
@@ -493,16 +511,26 @@ list-style-type: none;
         color: #000 !important; /* Black prints faster: h5bp.com/s */
         box-shadow: none !important;
         text-shadow: none !important;
+
+
     }
+
+    .logoBg {
+
+  border-bottom: none;
+}
+.printhide {
+  display: none;
+}
     a, a:visited {
         text-decoration: underline;
     }
-    a[href]:after {
+   /* a[href]:after {
         content: " (" attr(href) ")";
     }
     abbr[title]:after {
         content: " (" attr(title) ")";
-    }
+    }*/
     /*
      * Don't show links for images, or javascript/internal links
      */

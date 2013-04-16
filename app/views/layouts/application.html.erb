@@ -22,10 +22,12 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+          <div class="logo abs">
+           <a href="/"><img src="http://www.lillypulitzer.com/assets/images/text/english/logo.png" height=46 width=169  /> </a> 
+
+              </div>
         <div class="logoBg abs maxWidth">
-          <div class="logo">
-            <img src="http://www.lillypulitzer.com/assets/images/text/english/logo.png" />
-          </div>
+
         </div>
 
         <div class="shell abs maxWidth">
@@ -35,7 +37,7 @@
             <!-- Begin page content -->
             <article role="primarycontent">
 
-                <div id="user_header">
+                <div class="user_header printhide">
         <% if current_user %>
           Logged in as <%= current_user.email %>.
           <%= link_to "Log Out", logout_path %>

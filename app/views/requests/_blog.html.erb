@@ -1,11 +1,12 @@
 
-<div class = "sort">
+<div class = "sort printhide">
 	Sort By:
 	    <%= sortable "date", "Date" %>,
 
     <%= sortable "status", "Status" %>, 
     <%= sortable "priority", "Priority" %>,
-    <%= sortable "deliverable", "Deliverable" %>
+    <%= sortable "deliverable", "Deliverable" %>,
+    <%= sortable "jobnumber", "Job" %>
 </div>
 
 <hr>
@@ -22,7 +23,7 @@
 
 		<div class = "due_date"><%= request.date.strftime("%B %d, %Y") %></div>
 
-		<div class = "title"><%= link_to request.title,edit_request_path(request) %></div>
+		<div class = "title"><%= link_to request.title,edit_request_path(request) %>, <span class = "jobnumber"><%= request.jobnumber%></span> </div>
         <div class = "name" ><%= mail_to request.email, request.name %>, <span class = "dept"><%= request.department%></span> </div> 
 
 
@@ -34,7 +35,7 @@
 
 			<div class = "deliverable"><%= request.deliverable %></div>
 
-			<div class = "actions"> <td><%= link_to 'Show', request %></td> |
+			<div class = "actions printhide"> <td><%= link_to 'Show', request %></td> |
     <td><%= link_to 'Edit', edit_request_path(request) %></td> |
     <td><%= link_to 'Delete', request, method: :delete, data: { confirm: 'Are you sure?' } %></td> </div>
 

@@ -12,6 +12,11 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label "Job Number" %><br />
+    <%= f.number_field :jobnumber %>
+  </div>
+
  <div class="field">
     <%= f.label "Request Title" %><br />
     <%= f.text_field :title%>
@@ -75,7 +80,7 @@
   </div>
   <div class="field">
     <%= f.label :deliverable %><br />
-    <%= f.select :deliverable, [['Print'],['Digital'],['Presentation'],['Booklet ']] %>
+    <%= f.select :deliverable, [['Print'],['Digital'],['Presentation'],['Booklet'],['Multi-Media( Print, Digital, etc)'],['Other']] %>
   </div>
   <div class="textarea_box">
     <%= f.label :description %><br />
