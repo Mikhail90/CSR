@@ -22,22 +22,21 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-          <div class="logo abs">
-           <a href="/"><img src="http://www.lillypulitzer.com/assets/images/text/english/logo.png" height=46 width=169  /> </a> 
 
-              </div>
-        <div class="logoBg abs maxWidth">
+
+        <div class="logo abs">
+           <a href="/"><img src="http://www.lillypulitzer.com/assets/images/text/english/logo.png" height=46 width=169  /> </a> 
+        </div>
+
+
+        <div class="logoBg abs maxW rightalignidth">
 
         </div>
 
+
         <div class="shell abs maxWidth">
   
-          <div class="wrapper">
-            
-            <!-- Begin page content -->
-            <article role="primarycontent">
-
-                <div class="user_header printhide">
+                <div class="user_header printhide rightalign abs2">
         <% if current_user %>
           Logged in as <%= current_user.email %>.
           <%= link_to "Log Out", logout_path %>
@@ -46,6 +45,11 @@
           <%= link_to "Log In", login_path %>
         <% end %>
           </div>
+          <div class="wrapper">
+            
+            <!-- Begin page content -->
+            <article role="primarycontent">
+
               <!-- Add your site or application content here -->
               <%= yield %>
             </article>

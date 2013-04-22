@@ -1,48 +1,98 @@
 
-<div class = "sort printhide">
-	Sort By:
-	    <%= sortable "date", "Date" %>,
 
-    <%= sortable "status", "Status" %>, 
-    <%= sortable "priority", "Priority" %>,
-    <%= sortable "deliverable", "Deliverable" %>,
-    <%= sortable "jobnumber", "Job" %>
-</div>
 
-<hr>
+<!-- <hr> -->
 
 <% @requests.each do |request| %>
-	
+    
+<div class="section group">
+    <!-- date -->
+    <div class="group entrydate">
+        <div class="col due_date"><%= request.date.strftime("%b %d, %Y") %></div>
+    </div>
+    <div class="group entry">
+        <div class="col span_1_of_12 datecorner"></div>
+        <div class="col span_11_of_12 entryborder">
+            <div class="col span_5_of_12 projectinfo">
+                <!-- Title and Job Number -->
+                <div class = "title"><%= link_to request.title,edit_request_path(request) %>, <span class = "jobnumber"><%= request.jobnumber%></span> </div><br/>
+                <!-- Name and Title -->
+                 <div class = "name" ><%= mail_to request.email, request.name %>, <span class = "dept"><%= request.department%></span> </div> 
+
+            </div>
+            <div class="col span_6_of_12 statusinfo">
+                <!-- Deliverable -->
+                <div class="deliverable
+
+            <%= 
+             'print_d ' if request.deliverable == 'Print' 
+             %>
+            
+             <%=
+             'digital_d ' if request.deliverable == 'Digital'
+             %>
+            
+            <%=
+             'presentation_d ' if request.deliverable == 'Presentation'
+             %>
+
+                          <%=
+             'booklet_d ' if request.deliverable == 'Booklet'
+             %>
+
+             <%=
+             'other_d ' if request.deliverable == 'Other'
+             %>
+
+            <%=
+             'multimedia_d ' if request.deliverable == 'Multi-Media( Print, Digital, etc)'
+             %>
 
 
 
-<div class = "group">
-    <!-- Gorup is a row -->
-
-        <div class = "col span_6_of_12">
-
-		<div class = "due_date"><%= request.date.strftime("%B %d, %Y") %></div>
-
-		<div class = "title"><%= link_to request.title,edit_request_path(request) %>, <span class = "jobnumber"><%= request.jobnumber%></span> </div>
-        <div class = "name" ><%= mail_to request.email, request.name %>, <span class = "dept"><%= request.department%></span> </div> 
 
 
-        </div>
 
-        <div class = "col span_6_of_12">
+             "
 
-			<div class = "priority">Priority: <%= request.priority %>, <span class = "status"> Status: <%= request.status%></span> </div>
 
-			<div class = "deliverable"><%= request.deliverable %></div>
+             >
 
-			<div class = "actions printhide"> <td><%= link_to 'Show', request %></td> |
+                <%= request.deliverable%></div>
+
+                <!-- Status and Priority -->
+            <div class = "priority">
+              <!--       <%= 'urgent' if request.priority == 'Urgent'
+                    %>
+                    <%= 'high' if request.priority == 'High'
+                    %>
+                    <%= 'medium' if request.priority == 'Medium'
+                    %>
+                    <%= 'low' if request.priority == 'Low'
+                    %>
+                    "> -->
+            <%= request.priority %>, 
+
+            
+            <span class = "status"> <%= request.status%></span></div>
+
+                
+                <!-- Controls -->
+
+                <div class = "actions printhide"> 
+    <td><%= link_to 'Show', request %></td> |
     <td><%= link_to 'Edit', edit_request_path(request) %></td> |
     <td><%= link_to 'Delete', request, method: :delete, data: { confirm: 'Are you sure?' } %></td> </div>
+            </div>  
+            <div class="clearfix"></div>      
+        </div>
+    </div>    
+</div>
 
-		</div>
-	
-	</div>
+<div class = "section group">
 
-	<hr>
+
+    
+
 
     <% end %>

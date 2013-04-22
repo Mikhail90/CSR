@@ -1,4 +1,31 @@
-<h1>Listing requests</h1>
+<header>
+<div class ="section group printhide">
+
+	<div class = "col span_6_of_12">
+		<h1>Listing requests</h1>
+		<div class = "newrequest"><%= link_to 'New Request', new_request_path %> </div><br>
+			Sort By: <%= sortable "deliverable", "Deliverable" %>
+	</div>
+
+	<div class = "col span_6_of_12 rightalign toprightcolumn">
+			
+		<%= form_tag requests_path, :method => 'get' do %>
+  
+    		<%= text_field_tag :search, params[:search] %>
+    		<%= submit_tag "Search"%>
+
+    <br>		
+    Sort By:    
+    <%= sortable "date", "Date" %>,
+    <%= sortable "status", "Status" %>, 
+    <%= sortable "priority", "Priority" %>,
+    <%= sortable "jobnumber", "Job" %>
+	</div>
+</div>
+</header>
+
+
+
  
 <p id="notice"><%= notice %></p>
 
@@ -13,17 +40,14 @@
 <div class = "group printhide">
     <!-- Gorup is a row -->
 
-        <div class = "col span_5_of_12">
-<%= form_tag requests_path, :method => 'get' do %>
-  
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search"%>
-</div>
+            <div class = "col span_7_of_12">
+            </div>
 
         <div class = "col span_5_of_12">
-  (By Name, Title and Job Number)
+			
+		</div>
+
 <% end %>
-</div>
 
 </div>
  
@@ -33,6 +57,3 @@
 
 <%= will_paginate @requests %>
 <br />
-<div class ="printhide">
-<%= link_to 'New Request', new_request_path %>
-</div>

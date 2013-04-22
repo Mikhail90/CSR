@@ -8,8 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+
+
  */
 
 /*
@@ -25,14 +25,19 @@
    ========================================================================== */
 
 /* Page Copy */
+
 html,
-button,
 input,
 select,
 textarea {
   color: #333;
 }
 
+input[type=submit] {
+  color: white;
+  background-color: #e01282;
+  cursor: pointer;
+}
 
 /** 
  * Gotham font faces
@@ -48,7 +53,7 @@ body {
   line-height: 1.5em;
   margin: 0;
   padding: 0;
-  background: #e01282;
+  background: #e01282 !important;
 }
 small {
   font-family: Verdana, sans serif;
@@ -102,7 +107,7 @@ label {
 }
 textarea, input {
   border: solid 1px #ddd;
-  padding: 2px;
+  padding: 3px;
   max-width: 300px;
   width: 100%;
 }
@@ -137,7 +142,7 @@ textarea:focus, input:focus {
  * A better looking default horizontal rule
  */
 hr {
-	clear: both;
+  clear: both;
   display: block;
   height: 1px;
   border: 0;
@@ -181,47 +186,6 @@ ul {
 list-style-type: none;
 }
 
-/* ==========================================================================
-   Mikhail's Changes
-   ========================================================================== */
-  .due_date{
-    font-weight: bold;
-  }
-
-  .title a{
-    color: #e01282;
-    
-    font-size: large;
-  }
-
-  .deliverable {
- font-weight: bold;
- font-size: medium;
-
-} 
-
-.search, input {
- max-width: 150px; 
- width: 75%;
-}
-
-.textarea_box{
-    padding: 2px;
-  max-width: 300px;
-  width: 100%;
-}
-.error{
-  font-size: large;
-  color: red;
-  font-weight: bold;
-}
-
-.jobnumnber{
-  font-size: large;
-    font-weight: bold;
-
-
-}
 
 
 /* ==========================================================================
@@ -305,6 +269,15 @@ list-style-type: none;
 .span_1_of_12 {
   width: 6.86%; 
 }
+.span_0.5_of_12{
+  width:3.43%;
+}
+
+.span_0.25_of_12{
+  width:1.5%;
+}
+
+
 
 /* YOUR STYLES */
 
@@ -317,6 +290,12 @@ list-style-type: none;
   top: 0;
   left: 0;
 }
+
+.abs2{
+  position: absolute;
+  top:0;
+  right:0;
+}
 .maxWidth {
   width: 100%;
 }
@@ -328,12 +307,11 @@ list-style-type: none;
   border-bottom: solid 2px #62cfde;
 }
 .logo {
-  width: 100%;
-  max-width: 1140px;
+  width: 169px;
   margin: 0 auto;
   z-index: 99;
   top: 1%;
-  left:11%;
+  left:8%;
 }
 .logo img {
   margin: 17px 0 0 17px;
@@ -341,7 +319,12 @@ list-style-type: none;
 .logo a {
   border-bottom: solid 0px #fff;
 }
-
+.login {
+  z-index: 99;
+  top: 5%;
+  right: 11%;
+  text-align: right;
+}
 .shell {
   padding: 20px 0 40px 0;
   z-index: 2;
@@ -365,9 +348,9 @@ list-style-type: none;
   font-style: italic;
 }
 .backtotop {
-	float: right;
-	margin: 10px 0 10px 0;
-	border-bottom: solid 1px #fff;
+  float: right;
+  margin: 10px 0 10px 0;
+  border-bottom: solid 1px #fff;
 }
 
 /* arrows */
@@ -385,8 +368,182 @@ list-style-type: none;
   background-image: url(/images/down_arrow.gif);
 }
 
+/* ==========================================================================
+   Mikhail's Changes
+   ========================================================================== */
+  .due_date{
+    font-weight: bold;
+  }
+  .title {
+    margin: 10px 0;
+  }
+  .title a{
+    color: #e01282;
+    
+    font-size: large;
+  }
 
 
+input {
+ max-width: 150px; 
+ width: 75%;
+
+}
+
+.searchBtn {
+  border: solid 1px #e01282;
+}
+.textarea_box{
+    padding: 2px;
+  max-width: 300px;
+  width: 100%;
+}
+.error{
+  font-size: large;
+  color: red;
+  font-weight: bold;
+}
+.name{
+  font-size: large;
+}
+.jobnumnber{
+    font-size: small;
+
+}
+
+.request_border{
+ border-bottom: solid;
+ border-top: solid;
+}
+
+.border_left{
+  border-left: solid;
+ 
+}
+
+.border_right{
+  border-right: solid;
+ 
+}
+
+.deliverable {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 15px;
+  display: block;
+} 
+
+/*
+.print_d{
+  background-color: #38d42f;
+  
+}
+.digital_d{
+    background-color: #2ce5e8;
+}
+
+.other_d{
+    background-color: rgba(222,51,222,1);
+}
+
+.presentation_d{
+    background-color: rgba(0,6,154,0.98);
+}
+
+.booklet_d{
+    background-color: #a4e00a;
+}
+
+.multimedia_d{
+    background-color: #b12626;
+}
+*/
+
+
+
+
+.priority, .status {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/*
+.urgent{
+    background-color: red;
+}
+.high{
+  background-color: orange;
+
+}
+.medium{
+  color: black;
+  background-color: yellow;
+}
+.low{
+  background-color: green;
+}
+*/
+.indent{
+  background-color: white;
+  padding-left: 10px;
+}
+
+.rightalign{
+  text-align: right;
+}
+
+.toprightcolumn{
+  padding-top: 20px;
+}
+
+.user_header{
+  padding-right: 10px;
+}
+
+
+.entryborder {
+  border: solid 1px #ddd;
+}
+.entryborder .col {
+  padding: 20px;
+}
+.entrydate {
+  width: 200px;
+  padding: 2px 0 0 20px;
+  margin: 0;
+  position: relative;
+  bottom: -14px;
+  border: solid 1px #ddd;
+  background: #fff;
+ }
+
+.entry .col {
+  margin: 0;
+}
+
+ .datecorner {
+  width: 7px;
+  height: 23px; 
+  background: url(/images/date-banner-corner.png) 0px 16px no-repeat;
+ }
+.newrequest a, .newrequest a:hover {
+  background-color: #62cfde;
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: normal;
+  padding: .25em 1em;
+}
+
+.plain{
+  background-color: white;
+  color: white
+}
+
+.sortLinks, .controls {
+  margin-top: 10px;
+  clear: both;
+}
 
 /* ==========================================================================
    Helper classes
@@ -498,6 +655,32 @@ list-style-type: none;
   .span_5_of_12, .span_4_of_12, .span_3_of_12, .span_2_of_12, .span_1_of_12 {
     width: 100%; 
   }
+  .entryborder {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 0;
+  }
+  .entrydate {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+   }
+   .entryborder .col {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+    .rightalign {
+      text-align: left;
+    }
+    .title, .deliverable {
+      margin: 5px 0;
+    }
+    .controls {
+      margin-bottom: 20px;
+    }
 }
 
 /* ==========================================================================
@@ -568,4 +751,3 @@ list-style-type: none;
         page-break-after: avoid;
     }
 }
-
