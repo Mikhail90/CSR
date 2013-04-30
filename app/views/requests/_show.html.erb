@@ -71,3 +71,8 @@
   <b>Comments:</b>
   <%= @request.comments %>
 </p>
+
+<p>
+  <b>Attached Image:</b><br>
+  <%= image_tag @request.image_url.to_s %>
+</p>

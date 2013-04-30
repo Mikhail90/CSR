@@ -1,8 +1,14 @@
 class Request < ActiveRecord::Base
-  attr_accessible :title, :budget, :date, :deliverable, :department, :description, :email, :name, :priority, :quantity, :time, :approved, :comments, :status, :jobnumber
+  attr_accessible :title,:image, :budget, :date, :deliverable, :department, :description, :email, :name, :priority, :quantity, :time, :approved, :comments, :status, :jobnumber
 
   validate :date_is_less_than_one_week_from_today
 
+  #Image Uploader:
+  mount_uploader :image, ImageUploader
+
+
+
+#Methods:
 
   def date_is_less_than_one_week_from_today
   	if date<(Date.today+7)

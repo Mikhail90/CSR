@@ -5,6 +5,7 @@ gem 'will_paginate', '3.0.0'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+gem 'carrierwave'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

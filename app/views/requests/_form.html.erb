@@ -15,7 +15,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Your Name"%><br />
     <%= f.text_field :name %>
   </div>
    <div class="field">
@@ -23,7 +23,7 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label "Your Email" %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
@@ -55,10 +55,16 @@
     <%= f.select :deliverable, [['Print'],['Digital'],['Presentation'],['Booklet'],['Multi-Media( Print, Digital, etc)'],['Other']] %>
   </div>
   <div class="textarea_box">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
+    <p class = "helper_text">Copy/Imagery/Print Suggestions and/or any other important informations<p> 
     <%= f.text_area :description %>
   </div>
 
+  <div class ="field">
+    <p>
+    <%= f.label "Upload High Definition Image"%> 
+    <%= f.file_field :image %>
+  </p>
   <div class="actions">
     <%= f.submit %>
   </div>

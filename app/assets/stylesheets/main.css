@@ -105,7 +105,7 @@ label {
   margin: 20px 0 1px 0;
   display: block;
 }
-textarea, input {
+textarea, input,input[type=file] {
   border: solid 1px #ddd;
   padding: 3px;
   max-width: 300px;
@@ -115,6 +115,7 @@ textarea:focus, input:focus {
   outline: none;
   border: solid 1px #62cfde;
 }
+
 
 .formWrapper {
   width: 100%;
@@ -368,6 +369,7 @@ list-style-type: none;
   background-image: url(/images/down_arrow.gif);
 }
 
+
 /* ==========================================================================
    Mikhail's Changes
    ========================================================================== */
@@ -523,7 +525,7 @@ input {
 
  .datecorner {
   width: 7px;
-  height: 23px; 
+  height: 23px; http://radiant-fortress-5738.herokuapp.com/requests?direction=asc&sort=priority
   background: url(/images/date-banner-corner.png) 0px 16px no-repeat;
  }
 .newrequest a, .newrequest a:hover {
@@ -544,6 +546,16 @@ input {
   margin-top: 10px;
   clear: both;
 }
+
+.helper_text {
+  margin-top: 0px;
+  color: grey;
+  margin-bottom: 0px;
+  height: 23px;
+  font-size: 13px;
+
+}
+
 
 /* ==========================================================================
    Helper classes

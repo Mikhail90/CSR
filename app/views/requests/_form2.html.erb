@@ -87,6 +87,11 @@
     <%= f.text_area :description %>
   </div>
 
+  <p>
+  <b>Attached Image:</b> <br>
+  <%= image_tag @request.image_url.to_s %>
+</p>
+
 
   <div class="actions">
     <%= f.submit %>             
